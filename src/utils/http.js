@@ -3,7 +3,7 @@ import store from '../store/index'
 import router from '../router/index'
 
 const BASE_URL = 'https://alonepluto.info/api/cloud/v1'
-const SECRET_KEY = 'WIGDIOGR9V8B9R'
+const SECRET_KEY = 'A8DFG733VG049'
 
 export function http(config) {
   let instance = axios.create({
@@ -12,7 +12,7 @@ export function http(config) {
   })
   instance.interceptors.request.use(config => {
     config.headers.SecretKey = SECRET_KEY
-    if ("/login".test(config.url)) {
+    if (/login/.test(config.url)) {
       return config;
     } else {
       config.headers.Authorization = store.state.token;

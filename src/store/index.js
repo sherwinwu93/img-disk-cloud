@@ -5,16 +5,18 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    snackbar: false,
-    snackbar_timeout: 3000,
-    snackbar_color: "",
-    snackbar_text: "",
+    snackbar: {
+      show: false,
+      timeout: 3000,
+      color: "",
+      text: ""
+    }
   },
   mutations: {
     message(state, payload) {
-      state.snackbar = true;
-      state.snackbar_color = payload.color;
-      state.snackbar_text = payload.text;
+      state.snackbar.show = true;
+      state.snackbar.color = payload.color;
+      state.snackbar.text = payload.text;
     }
   }
 })
