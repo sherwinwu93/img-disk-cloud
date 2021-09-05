@@ -14,7 +14,12 @@ const routes = [
   },
   {
     path: '/home',
-    component: () => import("../pages/home")
+    component: () => import("../pages/home"),
+    children: [
+      {path:'image',component:()=> import("../views/image")},
+      {path:'video',component:()=> import("../views/video")},
+      {path:'folder',component:()=> import("../views/folder")},
+    ]
   }
 ]
 

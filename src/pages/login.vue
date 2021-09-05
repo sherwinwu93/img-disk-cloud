@@ -283,7 +283,6 @@
 <script>
 import SparkMD5 from 'spark-md5'
 import {http} from '@/utils/http.js'
-
 export default {
   name: "login",
   data() {
@@ -452,6 +451,12 @@ export default {
       const response = await http(config);
       switch (response.data.code) {
         case 802:
+          //登录成功,设置表头
+          this.$store.commit('login', {
+            user: response.data.data.user,
+            token: response.data.data.token,
+            folders: response.data.data.folders
+          })
           this.$store.commit('message', {
             color: 'success',
             text: '登录成功'
