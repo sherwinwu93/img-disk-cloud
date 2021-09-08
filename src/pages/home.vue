@@ -15,7 +15,7 @@
         <v-icon v-if='!$store.state.user.user_avatar' size=30 color="white">mdi-account-circle</v-icon>
       </div>
       <v-btn icon>
-        <v-icon large color='white'>mdi-logout-variant</v-icon>
+        <v-icon large color='white' @click="quit">mdi-logout-variant</v-icon>
       </v-btn>
     </v-app-bar>
     <!--导航栏-->
@@ -58,7 +58,12 @@ export default {
       ]
     }
   },
-  methods: {}
+  methods: {
+    quit() {
+      this.$store.commit('quit');
+      this.$router.push('/login');
+    },
+  }
 }
 </script>
 

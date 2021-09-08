@@ -12,7 +12,7 @@ export default new Vuex.Store({
       text: ""
     },
     user:{},
-    folders:[],
+    folders:['xxx', 'yyy'],
     token:null
   },
   mutations: {
@@ -25,6 +25,26 @@ export default new Vuex.Store({
       state.user = payload.user;
       state.folders = payload.folders;
       state.token = payload.token;
+    },
+    updateFolder(state, payload) {
+      state.folders.push(payload);
+    },
+    quit(state, payload) {
+      state.user = null;
+      state.token = null;
+    },
+    deleteFolder(state, payload) {
+      state.folders.splice(state.folders.indexOf(payload), 1);
+    },
+    changeQuestion(state, payload) {
+      state.user.user_question = payload.question;
+      state.user.user_answer = payload.answer;
+    },
+    changePassword(state, payload) {
+      state.user.user_password = payload;
+    },
+    changeAvatar(state, payload) {
+      state.user.user_avatar = payload;
     }
   }
 })

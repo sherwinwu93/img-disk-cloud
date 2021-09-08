@@ -1,9 +1,13 @@
 import fileTable from './fileTable'
 import fileShow from "./fileShow";
+import folderShow from "./folderShow";
+import contextMenu from "./contextMenu";
 
 const components = [
   fileTable,
   fileShow,
+  folderShow,
+  contextMenu,
 ];
 
 const install = function (Vue) {

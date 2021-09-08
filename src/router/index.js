@@ -19,6 +19,8 @@ const routes = [
       {path:'image',component:()=> import("../views/image")},
       {path:'video',component:()=> import("../views/video")},
       {path:'folder',component:()=> import("../views/folder")},
+      {path:'profile',component:()=> import("../views/profile")},
+      {path:'timeline',component:()=> import("../views/timeline")},
     ]
   }
 ]
